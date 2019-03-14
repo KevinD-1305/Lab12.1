@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class SimpleGeneticAlgorithm
+public class SimpleGeneticAlgorithm 
 {
 	//The population is an array list of Scales Chromosomes
 	private ArrayList<OneMaxChrome> population = new ArrayList<OneMaxChrome>();
@@ -16,6 +16,7 @@ public class SimpleGeneticAlgorithm
 	private double mrate;
 	//The crossover rate
 	private double crate;
+
 	//Create a Genetic Algorithm with the specified parameters
 	public SimpleGeneticAlgorithm(int ps,int gs,int nb,double mr,double cr)
 	{
@@ -115,12 +116,11 @@ public class SimpleGeneticAlgorithm
 		ArrayList<Integer> p2 = population.get(p2id).GetRep();
 		ArrayList<Integer> c1 = new ArrayList<Integer>();
 		ArrayList<Integer> c2 = new ArrayList<Integer>();
-		Random rand = new Random();
-		int n = rand.nextInt(101); 
 		
 		for(int i=0;i<nbits;++i)
 		{
-			if (n <=50)
+			int n = CS2004.UI(1,2);
+			if (n == 1)
 			{
 				c1.add(p1.get(i));
 				c2.add(p2.get(i));

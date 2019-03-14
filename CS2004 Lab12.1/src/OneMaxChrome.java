@@ -44,15 +44,19 @@ public class OneMaxChrome
 		}
 	}
 	//Create a Chromosome based on array 'r'
-
+	public OneMaxChrome (ArrayList <Integer> r)
+	{
+		for (int i = 0; i < r.size(); ++i) {
+			if (r.get(i) < 2)
+				rep.add(r.get(i));
+		}
+	}
 	//Create a random binary Chromosome of length 'n' genes/bits
 	public OneMaxChrome(int n) 
 	{
 		RandomBinary(n);
 	}
-	public OneMaxChrome(ArrayList<Integer> c1) {
-		// TODO Auto-generated constructor stub
-	}
+
 	//Return the representation (as a pointer) for the Chromosome
 	public ArrayList<Integer> GetRep()
 	{
@@ -82,7 +86,7 @@ public class OneMaxChrome
 		if (fitness != -1) return(fitness);
 		for (int i = 0; i < rep.size(); i++)
 		{
-			fitness = rep.get(i);
+			fitness += rep.get(i);
 		}
 		++fc;
 		return(fitness);

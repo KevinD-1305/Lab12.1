@@ -18,8 +18,8 @@ public class Lab12
 			//The following parameters are not very good!
 			//These are the ones you should try and optimise!
 			int popsize = 10;
-			double mrate = 0.002;
-			double crate = 0.640;
+			double mrate = 0.001;
+			double crate = 0.7;
 			//You will not need to change the following
 			SimpleGeneticAlgorithm ga = new SimpleGeneticAlgorithm(popsize,10,1000,mrate,crate);
 			//Run the GA for 10,000 function calls
